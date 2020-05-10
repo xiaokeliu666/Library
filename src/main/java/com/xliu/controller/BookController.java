@@ -7,7 +7,9 @@ import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 import java.lang.reflect.Array;
 import java.util.ArrayList;
@@ -69,6 +71,12 @@ public class BookController {
         model.addAttribute("list",books);
         return "allBook";
     }
+
+//    @RequestMapping("/decBook")
+//    public String decBook(String bookName) {
+//        bookService.decBookByName(bookName);
+//        return "redirect:/book/allBook";
+//    }
 
 
 }

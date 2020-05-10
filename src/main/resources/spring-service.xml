@@ -27,6 +27,7 @@
     </bean>
     <bean id="OrderServiceImpl" class="com.xliu.service.OrderServiceImpl">
         <property name="orderMapper" ref="orderMapper"/>
+        <property name="bookMapper" ref="bookMapper"/>
     </bean>
 
     <!-- 配置事务管理器 -->

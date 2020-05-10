@@ -18,4 +18,6 @@ public interface BookMapper {
     List<Books> queryAllBook();
 
     List<Books> queryBookByName(@Param("bookName") String bookName);
+
+    int decBookByName(@Param("bookName") String bookName);
 }

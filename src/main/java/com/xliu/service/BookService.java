@@ -18,4 +18,6 @@ public interface BookService {
     List<Books> queryAllBook();
 
     List<Books> queryBookByName(@Param("bookName") String bookName);
+
+//    int decBookByName(String bookName);
 }

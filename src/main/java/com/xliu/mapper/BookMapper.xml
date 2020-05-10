@@ -30,4 +30,10 @@
     <select id="queryBookByName" resultType="Books">
         select * from books where bookName like '%${bookName}%'
     </select>
+
+    <update id="decBookByName" parameterType="String">
+        update books
+        set bookCounts=bookCounts-1
+        where bookName=#{bookName};
+    </update>
 </mapper>

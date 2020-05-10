@@ -39,5 +39,9 @@ public class BookServiceImpl implements BookService{
         return bookMapper.queryBookByName(bookName);
     }
 
+//    public int decBookByName(String bookName) {
+//        return bookMapper.decBookByName(bookName);
+//    }
+
 
 }
