@@ -78,7 +78,7 @@
                                 </c:when>
                                 <c:when test="${sessionScope.role=='user'}">
                                     <c:if test="${book.bookCounts>0}">
-                                <a href="#">借阅</a>
+                                <a href="${pageContext.request.contextPath}/order/orderBook?name=${book.bookName}">借阅</a>
                                     </c:if>
                                     <c:if test="${book.bookCounts==0}">
                                         <a href="#">订阅</a>

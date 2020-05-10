@@ -9,7 +9,7 @@
 <html>
 <head>
     <title>修改书籍</title>
-
+    <jsp:include page="template/header.jsp"/>
     <link href="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
 </head>
 

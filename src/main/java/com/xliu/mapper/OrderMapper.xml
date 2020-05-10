@@ -5,8 +5,8 @@
 <mapper namespace="com.xliu.mapper.OrderMapper">
 
     <insert id="addOrder" parameterType="Orders">
-        insert into orders (orderId,bookId,userId,borrowDate,returnDate)
-        where values (#{orderId},#{bookId},#{userId},#{borrowDate},#{returnDate});
+        insert into orders (orderId,bookName,userId,borrowDate,returnDate,status)
+        values (#{orderId},#{bookName},#{userId},#{borrowDate},#{returnDate},#{status});
     </insert>
     
 </mapper>
