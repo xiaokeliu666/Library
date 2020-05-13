@@ -6,7 +6,8 @@
 
     <insert id="addBook" parameterType="Books">
         insert into books (bookName,bookCounts,detail)
-        values (#{bookName},#{bookCounts},#{detail});
+        values (#{bookName},#{bookCounts},#{detail})
+        on duplicate key update bookCounts=bookCounts+values(bookCounts), detail=values(detail) ;
     </insert>
 
     <delete id="deleteBookById" parameterType="int">

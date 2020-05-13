@@ -42,6 +42,7 @@ public class BookController {
     @RequestMapping("/addBook")
     public String addBook(Books books) {
         System.out.println("addbook=>"+books);
+
         bookService.addBook(books);
         return "redirect:/book/allBook";
     }
