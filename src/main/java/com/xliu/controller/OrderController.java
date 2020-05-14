@@ -47,7 +47,7 @@ public class OrderController {
         model.addAttribute("end",end);
         return "order/orderBook";
     }
-    @ResponseBody
+//    @ResponseBody
     @RequestMapping("order/confirm")
     public String confirm(ServletRequest request) throws ParseException {
         SimpleDateFormat sdf = new SimpleDateFormat( "yyyy-MM-dd");
@@ -59,7 +59,7 @@ public class OrderController {
         orderService.addOrder(new Orders(orderId,bookName,userId,borrowDate,returnDate,"processing"));
 //        System.out.println(request.getParameter("borrowDate"));
 //        System.out.println(borrowDate);
-        return "";
+        return "redirect:/book/allBook";
 
     }
 }

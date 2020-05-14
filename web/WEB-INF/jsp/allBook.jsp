@@ -19,6 +19,7 @@
     <script src="http://cdn.bootcss.com/jquery/1.11.1/jquery.min.js"></script>
     <!-- 最新的 Bootstrap 核心 JavaScript 文件 -->
     <script src="http://cdn.bootcss.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+
 </head>
 <body>
 <div class="container">
@@ -36,9 +37,12 @@
         <div class="col-md-4 column">
             <c:if test="${sessionScope.role=='admin'}">
                 <a class="btn btn-primary" href="${pageContext.request.contextPath}/book/toAddBook">新增书籍</a>
+                <form action="${pageContext.request.contextPath}/book/batchAdd" method="post" enctype="multipart/form-data">
+                    选择文件:<input type="file" name="file">
+                    <input type="submit" value="提交">
+                </form>
             </c:if>
             <a class="btn btn-primary" href="${pageContext.request.contextPath}/book/allBook">显示书籍</a>
-
         </div>
         <div class="col-md-4 column">
             <form action="${pageContext.request.contextPath}/book/queryBook" method="post" style="float: right">
@@ -95,4 +99,9 @@
 </div>
 
 </body>
+<%--<script type="text/javascript">--%>
+<%--    $('input[id=lefile]').change(function() {--%>
+<%--        $('#photoCover').val($(this).val());--%>
+<%--    });--%>
+<%--</script>--%>
 </html>

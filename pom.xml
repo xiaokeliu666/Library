@@ -107,11 +107,11 @@
         </dependency>
 
 <!--        contains utility classes, stream implementations, file filters, file comparators, endian transformation classes, and much more-->
-        <dependency>
-            <groupId>commons-io</groupId>
-            <artifactId>commons-io</artifactId>
-            <version>2.4</version>
-        </dependency>
+<!--        <dependency>-->
+<!--            <groupId>commons-io</groupId>-->
+<!--            <artifactId>commons-io</artifactId>-->
+<!--            <version>2.4</version>-->
+<!--        </dependency>-->
 <!--                adding support for multipart file upload functionality to servlets and web applications-->
         <dependency>
             <groupId>commons-fileupload</groupId>
