@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.xliu.mapper.SubscriptionMapper">
+
+    <insert id="addSubscription" parameterType="Subscriptions">
+        insert into subscriptions (userId,bookName,email)
+        values (#{userId},#{bookName},#{email});
+    </insert>
+
+    <delete id="delSubscription" parameterType="String">
+        delete from subscriptions
+        where userId = #{userId} and bookName = #{bookName}
+    </delete>
+
+    <select id="querySubscriptionByUser" parameterType="String" resultType="String">
+        select bookName from subscriptions
+        where userId = #{userId}
+    </select>
+
+    <select id="queryEmail" resultType="Subscriptions">
+        select * from subscriptions
+    </select>
+
+</mapper>

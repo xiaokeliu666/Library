@@ -21,6 +21,7 @@
     <!--BookServiceImpl注入到IOC容器中-->
     <bean id="BookServiceImpl" class="com.xliu.service.BookServiceImpl">
         <property name="bookMapper" ref="bookMapper"/>
+<!--        <property name="subscriptionMapper" ref="subscriptionMapper"/>-->
     </bean>
     <bean id="UserServiceImpl" class="com.xliu.service.UserServiceImpl">
         <property name="userMapper" ref="userMapper"/>
@@ -28,6 +29,9 @@
     <bean id="OrderServiceImpl" class="com.xliu.service.OrderServiceImpl">
         <property name="orderMapper" ref="orderMapper"/>
         <property name="bookMapper" ref="bookMapper"/>
+    </bean>
+    <bean id="SubscriptionServiceImpl" class="com.xliu.service.SubscriptionServiceImpl">
+        <property name="subscriptionMapper" ref="subscriptionMapper"/>
     </bean>
 
     <!-- 配置事务管理器 -->

@@ -15,5 +15,6 @@
         <mapper class="com.xliu.mapper.BookMapper"/>
         <mapper class="com.xliu.mapper.UserMapper"/>
         <mapper class="com.xliu.mapper.OrderMapper"/>
+        <mapper class="com.xliu.mapper.SubscriptionMapper"/>
     </mappers>
 </configuration>

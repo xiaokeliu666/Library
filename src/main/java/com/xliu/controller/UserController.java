@@ -31,6 +31,7 @@ public class UserController {
     public String validation(String userId, String password, HttpSession session) {
         if(userService.login(userId).getPassword().equals(password)) {
             session.setAttribute("userId",userId);
+            session.setAttribute("email",userService.login(userId).getEmail());
             session.setAttribute("role",userService.login(userId).getRole());
             return "redirect:/book/allBook";
         }

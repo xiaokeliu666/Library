@@ -9,7 +9,7 @@ public class AppTest {
         Email email = (Email) context.getBean("email");
 
         String senderEmailId = "550477200@qq.com";
-        String receiverEmailId = "550477200@qq.com";
+        String receiverEmailId = "2254747307@qq.com";
         String subject = "123123";
         String message = "123123";
 
