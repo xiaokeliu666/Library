@@ -5,6 +5,7 @@ import com.xliu.pojo.Books;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Map;
 
 @Service("BookServiceImpl")
 public class BookServiceImpl implements BookService{
@@ -31,8 +32,8 @@ public class BookServiceImpl implements BookService{
         return bookMapper.queryBookById(id);
     }
 
-    public List<Books> queryAllBook() {
-        return bookMapper.queryAllBook();
+    public List<Books> queryAllBook(Map<String,Integer> map) {
+        return bookMapper.queryAllBook(map);
     }
 
     public List<Books> queryBookByName(String bookName) {

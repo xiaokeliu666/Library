@@ -4,6 +4,7 @@ import com.xliu.pojo.Books;
 import org.apache.ibatis.annotations.Param;
 
 import java.util.List;
+import java.util.Map;
 
 public interface BookMapper {
 //    增加一本书
@@ -15,7 +16,7 @@ public interface BookMapper {
 //    查询一本书
     Books queryBookById(@Param("bookId") int id);
 //    查询所有书
-    List<Books> queryAllBook();
+    List<Books> queryAllBook(Map<String,Integer> map);
 
     List<Books> queryBookByName(@Param("bookName") String bookName);
 

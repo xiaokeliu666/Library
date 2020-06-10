@@ -5,6 +5,7 @@ import org.apache.ibatis.annotations.Param;
 import org.springframework.web.multipart.MultipartFile;
 
 import java.util.List;
+import java.util.Map;
 
 public interface BookService {
     //    增加一本书
@@ -16,7 +17,7 @@ public interface BookService {
     //    查询一本书
     Books queryBookById(int id);
     //    查询所有书
-    List<Books> queryAllBook();
+    List<Books> queryAllBook(Map<String,Integer> map);
 
     List<Books> queryBookByName(@Param("bookName") String bookName);
 

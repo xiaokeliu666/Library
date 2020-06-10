@@ -30,9 +30,7 @@ import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.lang.reflect.Array;
-import java.util.ArrayList;
-import java.util.Iterator;
-import java.util.List;
+import java.util.*;
 
 @Controller
 @RequestMapping("/book")
@@ -45,20 +43,19 @@ public class BookController {
     @Qualifier("SubscriptionServiceImpl")
     private SubscriptionService subscriptionService;
 //    查询全部的书籍，并且返回到一个书籍展示页面
-    @RequestMapping("/allBook")
-    public String list(Model model, HttpSession session) {
-        List<Books> list = bookService.queryAllBook();
-//        System.out.println("======================测试一下===========================");
-//        System.out.println((String)session.getAttribute("userId"));
-//        System.out.println("======================测试一下===========================");
-        List<String> subList = subscriptionService.querySubscriptionByUser((String)session.getAttribute("userId"));
-//        System.out.println("======================测试一下===========================");
-        for (String s : subList) {
-            System.out.println(s);
+    @RequestMapping("/allBook/{page}")
+    public String list(@PathVariable int page, Model model, HttpSession session) {
+        Map<String,Integer> map = new HashMap<String, Integer>();
+        if (page<1) {
+            page=1;
         }
-//        System.out.println("======================测试一下===========================");
+        map.put("start",(page-1)*5);
+        map.put("size",5);
+        List<Books> list = bookService.queryAllBook(map);
+        List<String> subList = subscriptionService.querySubscriptionByUser((String)session.getAttribute("userId"));
         model.addAttribute("list",list);
         model.addAttribute("subList",subList);
+        model.addAttribute("page",page);
         return "allBook";
     }
 
@@ -148,7 +145,6 @@ public class BookController {
         while(emailIterator.hasNext() && userIterator.hasNext()) {
             emailsending.sendEmail(senderEmailId,emailIterator.next(),subject,userIterator.next()+message);
         }
-
 
         return "redirect:/book/allBook";
     }

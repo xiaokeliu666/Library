@@ -10,10 +10,7 @@ import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.util.MultiValueMap;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.*;
 
 import javax.servlet.ServletRequest;
 import javax.servlet.http.HttpServletRequest;
@@ -30,10 +27,8 @@ public class OrderController {
     @Qualifier("OrderServiceImpl")
     private OrderService orderService;
 
-
-
-    @RequestMapping("/order/orderBook")
-    public String order(String name, Model model, HttpSession session) {
+    @RequestMapping("/order/orderBook/{name}")
+    public String order(@PathVariable String name, Model model, HttpSession session) {
         Calendar c = Calendar.getInstance();
         SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
         Date date=new Date();

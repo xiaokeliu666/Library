@@ -24,8 +24,8 @@
         select * from books where bookID=#{bookId}
     </select>
 
-    <select id="queryAllBook" resultType="Books">
-        select * from books
+    <select id="queryAllBook" parameterType="map" resultType="Books">
+        select * from books limit #{start},#{size}
     </select>
 
     <select id="queryBookByName" resultType="Books">

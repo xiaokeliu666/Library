@@ -82,7 +82,7 @@
                                 </c:when>
                                 <c:when test="${sessionScope.role=='user'}">
                                     <c:if test="${book.bookCounts>0}">
-                                        <a href="${pageContext.request.contextPath}/order/orderBook?name=${book.bookName}">借阅</a>
+                                        <a href="${pageContext.request.contextPath}/order/orderBook/${book.bookName}">借阅</a>
                                     </c:if>
                                     <c:if test="${book.bookCounts==0 && subList.contains(book.bookName)}">
                                         <a href="${pageContext.request.contextPath}/unsubscribe?name=${book.bookName}">取消订阅</a>
@@ -100,7 +100,10 @@
         </div>
     </div>
 </div>
-
+<ul class="pager">
+    <li><a href="${pageContext.request.contextPath}/book/allBook/${page-1}">Previous</a></li>
+    <li><a href="${pageContext.request.contextPath}/book/allBook/${page+1}">Next</a></li>
+</ul>
 </body>
 <%--<script type="text/javascript">--%>
 <%--    $('input[id=lefile]').change(function() {--%>

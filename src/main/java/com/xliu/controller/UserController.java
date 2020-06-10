@@ -33,7 +33,7 @@ public class UserController {
             session.setAttribute("userId",userId);
             session.setAttribute("email",userService.login(userId).getEmail());
             session.setAttribute("role",userService.login(userId).getRole());
-            return "redirect:/book/allBook";
+            return "redirect:/book/allBook/1";
         }
             return "user/login";
     }
